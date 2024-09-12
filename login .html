@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url("images/wallpaperflare.com_wallpaper.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        header {
+            background: rgba(53, 66, 74, 0.9);
+            color: #ffffff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            max-width: 400px;
+            margin: 100px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            color: #000;
+        }
+        h2 {
+            text-align: center;
+            color: #35424a;
+        }
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #35424a;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45667a;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: rgba(53, 66, 74, 0.9);
+            color: #ffffff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Loading screen styles */
+        #loading-screen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            flex-direction: column;
+        }
+        #loading-screen video {
+            max-width: 80%;
+            height: auto;
+        }
+        #loading-message {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Login</h1>
+</header>
+
+<main>
+    <h2>Sign In to Your Account</h2>
+    <form class="login-form" id="login-form">
+        <label for="username">Username/Email:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="phone">Phone Number (optional):</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Optional">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+</main>
+
+<!-- Loading Screen -->
+<div id="loading-screen" class="loading-screen">
+    <video id="loading-video" autoplay muted>
+        <source src="images/darkweb-loading.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div id="loading-message">You are moving to the Dark Web...</div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Sedic_Machinery. All rights reserved.</p>
+</footer>
+
+<script>
+    const form = document.getElementById('login-form');
+    const loadingScreen = document.getElementById('loading-screen');
+    const loadingVideo = document.getElementById('loading-video');
+    const loadingMessage = document.getElementById('loading-message');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting right away
+        
+        // Show loading screen and hide form
+        loadingScreen.style.display = 'flex';
+
+        // Initially show the "Access Granted" message
+        loadingMessage.textContent = 'Access Granted...';
+
+        // Wait for the video duration (26 seconds), then redirect
+        loadingVideo.onended = function() {
+            // Update message and redirect after the video ends
+            loadingMessage.textContent = 'You are moving to the Dark Web...';
+            setTimeout(() => {
+                window.location.href = 'item.html';
+            }, 4000);  // Short pause before redirect
+        };
+
+        // For fallback (if the video doesn't trigger), use timeout
+        setTimeout(() => {
+            loadingMessage.textContent = 'You are moving to the Dark Web...';
+            setTimeout(() => {
+                window.location.href = 'item.html';
+            }, 4000);  // Short pause before redirect
+        }, 26000);  // 26 seconds (video duration)
+    });
+</script>
+
+</body>
+</html>

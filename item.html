@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items for Sale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url("images/wallpaperflare.com_wallpaper.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        header {
+            background: rgba(53, 66, 74, 0.9);
+            color: #ffffff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #000;
+        }
+        h2 {
+            text-align: center;
+            color: #35424a;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .item img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .special-offer img {
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .item-info {
+            flex-grow: 1;
+            padding: 0 20px;
+        }
+        .item-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #35424a;
+        }
+        .special-offer {
+            border: 2px solid red;
+            padding: 10px;
+            border-radius: 5px;
+            color: red;
+            font-weight: bold;
+        }
+        .special-offer-badge {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 10px;
+            display: inline-block;
+            width: 100%;
+        }
+        .original-price {
+            text-decoration: line-through;
+            color: #777;
+            margin-right: 10px;
+        }
+        .discount-price {
+            color: red;
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Items for Sale</h1>
+</header>
+
+<main>
+    <h2>Our Best Deals</h2>
+
+    <!-- Item 1: Special Offer -->
+    <div class="item special-offer" onclick="location.href='item1.html';">
+        <div class="special-offer-badge">🔥 Special Offer - 20% Off!</div>
+        <img src="images/special.jpg" alt="Item 1">
+        <div class="item-info">
+            <h3>Phantom Viper Sniper</h3>
+            <p>Silent, deadly, and as precise as a surgeon’s scalpel. Grab yours now with a venomous 20% discount!</p>
+        </div>
+        <div class="item-price">
+            <span class="original-price">$74.99</span> 
+            <span class="discount-price">$59.99</span>
+        </div>
+    </div>
+
+    <!-- Item 2: Special Offer -->
+    <div class="item special-offer" onclick="location.href='item2.html';">
+        <div class="special-offer-badge">🔥 Special Offer - 35% Off!</div>
+        <img src="images/shotgun.jpg" alt="Item 2">
+        <div class="item-info">
+            <h3>Thunderstrike Boomstick</h3>
+            <p>When subtlety won’t cut it, this shotgun erupts with a boom! Lock, load, and save 35%.</p>
+        </div>
+        <div class="item-price">
+            <span class="original-price">$19.99</span> 
+            <span class="discount-price">$12.99</span>
+        </div>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="item" onclick="location.href='item3.html';">
+        <img src="images/boom.jpg" alt="Item 3">
+        <div class="item-info">
+            <h3>The Boombastic Grenade</h3>
+            <p>Feeling like your arguments just aren’t explosive enough? This grenade makes sure you win *any* debate with a bang!</p>
+        </div>
+        <div class="item-price">$7.00</div>
+    </div>
+
+    <!-- Item 4 -->
+    <div class="item" onclick="location.href='item4.html';">
+        <img src="images/twin.jpg" alt="Item 4">
+        <div class="item-info">
+            <h3>Scared Treasure: Twin Asura</h3>
+            <p>Forged by ancient monks and cursed with the spirits of two warring deities, these twin blades are more than just weapons!</p>
+        </div>
+        <div class="item-price">$17.99</div>
+    </div>
+
+    <!-- Item 5 -->
+    <div class="item" onclick="location.href='item5.html';">
+        <img src="images/revolver (1).jpg" alt="Item 5">
+        <div class="item-info">
+            <h3>Old Reliable Revolver</h3>
+            <p>This classic revolver may have seen a few duels, but it’s still got enough firepower to settle any dispute with style.</p>
+        </div>
+        <div class="item-price">$0.75</div>
+    </div>
+</main>
+
+</body>
+</html>
