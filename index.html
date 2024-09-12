@@ -16,6 +16,17 @@
             color: #ffffff;
             padding: 10px 20px;
             text-align: center;
+            position: relative;
+        }
+        .login-btn {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            padding: 10px 20px;
+            background-color: #35424a;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
         }
         main {
             padding: 20px;
@@ -24,6 +35,7 @@
             background: white;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            filter: blur(2px); /* Apply blur effect */
         }
         h2 {
             text-align: center;
@@ -76,12 +88,19 @@
             top: -10px;
             left: -10px;
         }
+        .login-message {
+            text-align: center;
+            color: #35424a;
+            font-weight: bold;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Items for Sale</h1>
+    <a href="login.html" class="login-btn">Login</a> <!-- Moved Login Button to Top Right -->
 </header>
 
 <main>
@@ -135,6 +154,11 @@
             <p>This classic revolver may have seen a few duels in its time, but it’s still got enough firepower to settle *any* dispute.</p>
         </div>
         <div class="item-price">$0.75</div>
+    </div>
+
+    <!-- Message for Users -->
+    <div class="login-message">
+        Please log in to view items in detail.
     </div>
 </main>
 
